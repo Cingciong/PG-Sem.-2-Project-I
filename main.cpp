@@ -1,13 +1,24 @@
 #include <iostream>     // std::cout, std::endl
-#include <stdlib.h>
+#include <stdlib.h>     /* rand srand */
 #include <time.h>       /* time */
 
-
-void generatingBoard() {
+void showBoard(int board[40][20]){
+    for (int i = 0; i < 40; ++i) {
+        if(i%5==0) std::cout<<"\n"<<"------------------------------------------------------"<<"\n";
+        for (int j = 0; j < 20; ++j) {
+            if(j%5==0) std::cout<<" | ";
+            if (board[i][j] ==1 ){
+                std::cout<<char(254)<<" ";
+            } else std::cout<<" "<<" ";
+        }
+        std::cout<<'\n';
+    }
+}
+int generatingBoard(int board[40][20]) {
 
     //declaration of variables .
     int rand;
-    int board[40][20];
+
     //every segment mentioned in task is saved to array.
     int segments[6][5][5] = {
      {{1,1,0,1,1},{1,0,0,1,1},{0,0,1,0,0},{1,0,0,0,1},{1,1,0,1,1}}
@@ -34,33 +45,17 @@ void generatingBoard() {
             }
         }
     }
-
-
-
-        for (int i = 0; i < 40; ++i) {
-            if(i%5==0) std::cout<<"\n"<<"------------------------------------------------------"<<"\n";
-            for (int j = 0; j < 20; ++j) {
-                if(j%5==0) std::cout<<" | ";
-                if (board[i][j] ==1 ){
-                    std::cout<<char(254)<<" ";
-                } else std::cout<<" "<<" ";
-            }
-
-            std::cout<<'\n';
-        }
-
-
-
-
-
-
-
+    return **board;
 };
 
 
 int main() {
 
-    std::cout << "Hello, aaaaWorld!" << std::endl;
-    generatingBoard();
+
+    int board[40][20];
+    **board = generatingBoard(board);
+    showBoard(board);
+
+
     return 0;
 }
