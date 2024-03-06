@@ -216,7 +216,7 @@ void randomPoints(int (*board)[20]) {
         }
     }
 
-    std::cout << "Start: (" << start.x << ", " << start.y << "), End: (" << end.x << ", " << end.y<<"\n";
+    std::cout << "Start: (" << start.x << ", " << start.y << "), End: (" << end.x << ", " << end.y<<")\n";
 }
 
 void showBoard(int (*board)[20], point start, point end) {
@@ -228,14 +228,14 @@ void showBoard(int (*board)[20], point start, point end) {
             } else {
                 if (start.x == j and start.y == i or end.x == j and end.y == i) {  // Swap indices for start and end points
                     if (start.x == j and start.y == i) {
-                        std::cout << "S ";
+                        std::cout << " S";
                     }
                     if (end.x == j and end.y == i) {
-                        std::cout << "E ";
+                        std::cout << " E";
                     }
                 } else {
                     if (board[j][i] == 0) {  // Swap indices for the board
-                        std::cout << "." << " ";
+                        std::cout << " .";
                     }
                 }
             }
