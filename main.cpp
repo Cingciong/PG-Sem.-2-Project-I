@@ -98,16 +98,6 @@ bool bfsIterative(node map[][20], point start, point end) {
     const int rows = 40;
     const int cols = 20;
 
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
-            map[i][j].visited = false;
-            map[i][j].neighbours[0] = (i > 0 && !map[i - 1][j].isWall) ? &map[i - 1][j] : nullptr; // Up
-            map[i][j].neighbours[1] = (i < rows - 1 && !map[i + 1][j].isWall) ? &map[i + 1][j] : nullptr; // Down
-            map[i][j].neighbours[2] = (j < cols - 1 && !map[i][j + 1].isWall) ? &map[i][j + 1] : nullptr; // Right
-            map[i][j].neighbours[3] = (j > 0 && !map[i][j - 1].isWall) ? &map[i][j - 1] : nullptr; // Left
-        }
-    }
-
     node* queue[rows * cols];
     int front = 0, rear = 0;
 
