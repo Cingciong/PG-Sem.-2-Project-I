@@ -28,10 +28,10 @@ void showBoard(int board[40][20], point start, point end);
 int generatingBoard(int board[40][20]);
 void creatingMap(node map[40][20], int board[40][20]);
 void printPath(node* endNode);
-bool bfsIterative(node map[][20], point start, point end);
+bool bfsIterative(node map[40][20], point start, point end);
 void printPath(node* endNode);
 void printMapWithQueue(node map[][20], int rows, int cols, point start, point end, node* current, node* queue[], int front, int rear);
-void printFinalPath(node map[][20], point start, point end);
+void printFinalPath(node map[40][20], point start, point end);
 
 //MAIN
 int main() {
@@ -94,7 +94,7 @@ void creatingMap(node map[40][20], int board[40][20]) {
     }
 }
 
-bool bfsIterative(node map[][20], point start, point end) {
+bool bfsIterative(node map[40][20], point start, point end) {
     const int rows = 40;
     const int cols = 20;
 
@@ -143,7 +143,7 @@ void printPath(node* endNode) {
     std::cout <<"counter: " <<counter<< std::endl;
 }
 
-void printFinalPath(node map[][20], point start, point end) {
+void printFinalPath(node map[40][20], point start, point end) {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
     // Use a separate boolean array to mark the path
